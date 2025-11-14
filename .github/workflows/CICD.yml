@@ -26,10 +26,10 @@ jobs:
         run: echo "${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}" | docker login -u "${{ secrets.DOCKER_HUB_USERNAME }}" --password-stdin
 
       - name: Build Docker Image
-        run: docker build -t <YOUR_DOCKER_USERNAME>/<IMAGE_NAME>:latest .
+        run: docker build -t samruddhig/handle_image:latest .
 
       - name: Push Docker Image
-        run: docker push <YOUR_DOCKER_USERNAME>/<IMAGE_NAME>:latest
+        run: docker push samruddhig/handle_image:latest
 
 
   deploy:
@@ -38,7 +38,7 @@ jobs:
 
     steps:
       - name: Pull Docker Image
-        run: docker pull <YOUR_DOCKER_USERNAME>/<IMAGE_NAME>:latest
+        run: docker pull samruddhig/handle_image:latest
 
       - name: Stop Old Container
         run: docker rm -f springboot_app || true
@@ -48,4 +48,4 @@ jobs:
           docker run -d \
           --name springboot_app \
           -p 8080:8080 \
-          <YOUR_DOCKER_USERNAME>/<IMAGE_NAME>:latest
+          samruddhig/handle_image:latest
