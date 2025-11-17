@@ -11,5 +11,6 @@ public class Bid {
     private String id;
     private String bidderName;
     private Double amount;
+    private String phoneNumber;
 }
 
