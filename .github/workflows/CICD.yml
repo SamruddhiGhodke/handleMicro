@@ -3,7 +3,7 @@ name: CI/CD_SpringBoot_Deploy
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
 
