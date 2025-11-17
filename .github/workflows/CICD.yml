@@ -30,7 +30,7 @@ jobs:
         run: docker build -t samruddhig/handle_image:latest .
 
       - name: Push Docker Image
-        run: docker push samruddhig/handle_image:latest
+        run: docker push samruddhig/handle_image
 
 
   deploy:
