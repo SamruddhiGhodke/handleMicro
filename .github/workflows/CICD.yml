@@ -41,11 +41,11 @@ jobs:
         run: docker pull samruddhig/handle_image:latest
 
       - name: Stop Old Container
-        run: docker rm -f springboot_app || true
+        run: docker rm -f handle_image || true
 
       - name: Start New Spring Boot Container
         run: |
           docker run -d \
-          --name springboot_app \
+          --name handle_image \
           -p 8080:8080 \
           samruddhig/handle_image:latest
